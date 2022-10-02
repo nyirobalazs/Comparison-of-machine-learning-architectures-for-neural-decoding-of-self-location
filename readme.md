@@ -15,7 +15,7 @@ Raw neural recordings from CA1 in rodents using tetrode recordings from Markus F
 - convert raw .nwb file into a raw .h5 format file in the required data system
 - preprocess files with optional bandpass, line noise, detrend, rolling window mean filters and downsampling
 - write preprocessed files into a .h5 file
-- use single CPU, paralell computing(on multi-core CPU) or use GPU based on the fastes calculated preprocessed mode
+- use single CPU, paralell computing(on multi-core CPU) or use GPU for preprocessing, based on the fastest calculated processing mode
 - learn decoding from neural code by:
     - Behaviour cloning
     - Transfer learning (Efficientnet B0 with imagenet weights)
