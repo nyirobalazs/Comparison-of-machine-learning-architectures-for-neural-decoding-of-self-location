@@ -1,4 +1,4 @@
-## **Comparison of machine learning architectures for neural decoding of self-location**
+# **Comparison of machine learning architectures for neural decoding of self-location**
 ___
 
 In this project, a set of tools has been developed to decode the position, head orientation and velocity of an animal from neurophysiological signals recorded from raw place cells. The program can use behaviour cloning, transfer learning or CNN-BiLSTM architecture for machine learning. 
