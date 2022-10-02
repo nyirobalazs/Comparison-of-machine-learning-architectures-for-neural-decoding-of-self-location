@@ -24,3 +24,7 @@ Raw neural recordings from CA1 in rodents using tetrode recordings from Markus F
 - save best weights
 - make predictions with the trained network
 - evaulate model (save results)
+
+### **Original paper**
+
+Original paper about the project can be found here: https://github.com/nyirobalazs/thesis/blob/main/Comparison_of_machine%20learning_Balazs_Agoston_Nyiro.pdf
