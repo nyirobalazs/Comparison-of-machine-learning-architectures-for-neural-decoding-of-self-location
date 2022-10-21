@@ -3,6 +3,7 @@ ___
 
 In this project, a set of tools has been developed to decode the position, head orientation and velocity of an animal from neurophysiological signals recorded from raw place cells. The program can use behaviour cloning, transfer learning or CNN-BiLSTM architecture for machine learning. 
 
+My thesis can be read **[HERE](https://github.com/nyirobalazs/thesis/blob/main/Comparison_of_machine%20learning_Balazs_Agoston_Nyiro.pdf)**
 
 ### **Data**
 
@@ -25,6 +26,3 @@ Raw neural recordings from CA1 in rodents using tetrode recordings from Markus F
 - make predictions with the trained network
 - evaulate model (save results)
 
-### **Original paper**
-
-Original paper about the project can be found here: https://github.com/nyirobalazs/thesis/blob/main/Comparison_of_machine%20learning_Balazs_Agoston_Nyiro.pdf
