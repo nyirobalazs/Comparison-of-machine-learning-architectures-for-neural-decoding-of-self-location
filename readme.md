@@ -5,6 +5,9 @@ In this project, a set of tools has been developed to decode the position, head 
 
 My thesis can be read **[HERE](https://github.com/nyirobalazs/thesis/blob/main/Comparison_of_machine%20learning_Balazs_Agoston_Nyiro.pdf)**
 
+![figure](./assets/neural%20decoding.png)
+
+
 ### **Data**
 
 Raw neural recordings from CA1 in rodents using tetrode recordings from Markus Frey et. al.(2021) experiment: https://figshare.com/articles/dataset/Tetrode_recordings_from_CA1/14909766?backTo=/collections/DeepInsight_-_Data_sharing/5486703
