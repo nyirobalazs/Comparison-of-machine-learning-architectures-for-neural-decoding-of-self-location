@@ -5,7 +5,7 @@ In this project, a set of tools has been developed to decode the position, head 
 
 My thesis can be read **[HERE](https://github.com/nyirobalazs/thesis/blob/main/Comparison_of_machine%20learning_Balazs_Agoston_Nyiro.pdf)**
 
-![figure](./assets/neural%20decoding_.png)
+![figure](./assets/neural%20decoding-.png)
 
 
 ### **Data**
