@@ -9,7 +9,6 @@ from tensorflow.keras.callbacks import TensorBoard, ModelCheckpoint, ReduceLROnP
 from tensorflow.keras.applications import EfficientNetB0
 #from keras.layers import CuDNNLSTM #--> TODO: try as a faster GPU option for LSTM layers 
 from keras.models import Model
-#from keras import layers
 from tensorflow.keras import layers, regularizers
 import keras.backend as K
 from keras.layers.core import *
@@ -41,7 +40,6 @@ def multify_weights(kernel, out_channels):
     tiled = np.tile(mean_1d, (out_channels, 1))
     return(tiled)
 
-#TODO: input kernelt beadni inputnak nem a hidden layerts
 def pad_with_calc(start_dim, end_dim, to_end=True):
     """
     Calculate the padwith tuples for numpy pad function.
@@ -263,7 +261,6 @@ class CNN_transferlearn_model:
                          bias_regularizer=regularizers.l2(0.1),
                          activity_regularizer=regularizers.l1_l2(l1=0.1, l2=0.1))(hidden_layer)
 
-        
         return x
     
     def build_pos_Y_branch(self, hidden_layer):   
@@ -322,6 +319,7 @@ class CNN_behav_cloning_model:
         x = layers.BatchNormalization(axis=-1)(x)
         x = layers.MaxPooling2D(pool_size=(2, 2))(x)
         x = layers.Dropout(0.3)(x)
+        
         return x
 
     def build_speed_branch(self, inputs):
@@ -364,7 +362,6 @@ class CNN_behav_cloning_model:
         x = layers.Activation("selu")(x)
         x = layers.BatchNormalization()(x)
         x = layers.Dropout(0.5)(x)
-        #x = layers.Dense(1, name="head_dir_output")(x)
         x = layers.Dense(1, 
                          kernel_regularizer=regularizers.l2(0.01), 
                          bias_regularizer=regularizers.l2(0.01),
@@ -389,7 +386,6 @@ class CNN_behav_cloning_model:
         x = layers.Activation("selu")(x)
         x = layers.BatchNormalization()(x)
         x = layers.Dropout(0.5)(x)
-        #x = layers.Dense(1, name="position_X_output")(x)
         x = layers.Dense(1, 
                          kernel_regularizer=regularizers.l2(0.01), 
                          bias_regularizer=regularizers.l2(0.01),
@@ -519,6 +515,7 @@ class Training:
             raise ValueError('Missing paramater at filter.')
         
         print(print_terminal(type='done',message='Dataset filtering done.'))
+        
         return idx, filt_df
 
 
@@ -665,7 +662,6 @@ class Training:
 
     def mae(self, y_true, y_pred):
         return tf.keras.losses.MAE(y_true, y_pred)            
-    
     
     def train_model(self,dataset, model_name='CNN_behav_cloning',valr=0.3,testr=0.1,shuff=True,col=None,opr=None,val=None,channels=None, save_path='./models/model.h5'):
         """
@@ -868,9 +864,6 @@ class Evaluating:
     def cumulative_distribution(self,errors):
         """
         Calculate the cumulative distribution of errors.
-        ----------
-        Source:
-        https://www.geeksforgeeks.org/how-to-calculate-and-plot-a-cumulative-distribution-function-with-matplotlib-in-python/
         ----------
         Args:
             errors (array): The errors in time
