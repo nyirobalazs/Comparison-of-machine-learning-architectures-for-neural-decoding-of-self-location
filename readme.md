@@ -29,23 +29,43 @@ Raw neural recordings from CA1 in rodents using tetrode recordings from Markus F
 - make predictions with the trained network
 - evaulate model (save results)
 
-| Variable | Description | Possible Values |
-| --- | --- | --- |
-| base_path | Gives the source folder where the sources were saved | Any valid folder path |
-| is_test | If it's True no output data will be saved and make a minimum runtime to check functions | True or False |
-| is_save | If it's True all results will be saved (eg.: plots, models, etc.) | True or False |
-| source_file_path | Gives the source path (base_path + 'source file name') | Any valid file path |
-| original_srate | Sampling rate of the raw signal in Hz | 30000 |
-| led_srate | Sampling rate of the raw LED signal in Hz | 1000 |
-| new_srate | Downscaled target sampling rate in Hz | 10000 |
-| window_size | Size of one window in milliseconds | 2000 |
-| chunk_size | Size of one chunk in milliseconds | 30000 |
-| is_save_images | If it is True the plots will be saved | True or False |
-| image_save_dir | The name of the target folder where the plots will be saved | Any valid folder path |
-| start_point | It gives the start point of the plotted signal parts in ms | Any positive integer |
-| end_point | It gives the end point of the plotted signal parts in ms | Any positive integer greater than start_point |
-| tasks['Cheby_band'] | Chebyshev bandpass filter parameters: [lowcut, highcut, order] | Normally [2,250,5] |
-| tasks['narrow_filt'] | Notch filter parameters: [notch frequency, quality factor] | Normally [50,20] |
-| tasks['down_samp'] | Downsample parameter: [new sampling rate] | [new_srate] |
-| tasks['detrend'] | Detrend parameter: True or False | True or False |
-| tasks['roll_mean'] | Rolling mean parameter: [windows factor] | Normally [20] |
+
+# Signal Processing Project
+
+This project aims to perform some signal processing tasks on a given dataset.
+
+## Variables and Settings
+
+The following variables and settings are used in the project:
+
+- `base_path`: Gives the source folder where the sources were saved. Any valid folder path can be used.
+- `is_test`: If it's True no output data will be saved and make a minimum runtime to check functions. Possible values are True or False.
+- `is_save`: If it's True all results will be saved (eg.: plots, models, etc.). Possible values are True or False.
+- `source_file_path`: Gives the source path (base_path + 'source file name'). Any valid file path can be used.
+- `original_srate`: Sampling rate of the raw signal in Hz. The default value is 30000.
+- `led_srate`: Sampling rate of the raw LED signal in Hz. The default value is 1000.
+- `new_srate`: Downscaled target sampling rate in Hz. The default value is 10000.
+- `window_size`: Size of one window in milliseconds. The default value is 2000.
+- `chunk_size`: Size of one chunk in milliseconds. The default value is 30000.
+- `is_save_images`: If it is True the plots will be saved. Possible values are True or False.
+- `image_save_dir`: The name of the target folder where the plots will be saved. Any valid folder path can be used.
+- `start_point`: It gives the start point of the plotted signal parts in ms. Any positive integer can be used.
+- `end_point`: It gives the end point of the plotted signal parts in ms. Any positive integer greater than start_point can be used.
+- `tasks['Cheby_band']`: Chebyshev bandpass filter parameters: [lowcut, highcut, order]. Normally [2,250,5].
+- `tasks['narrow_filt']`: Notch filter parameters: [notch frequency, quality factor]. Normally [50,20].
+- `tasks['down_samp']`: Downsample parameter: [new sampling rate]. Use [new_srate].
+- `tasks['detrend']`: Detrend parameter: True or False. 
+- `tasks['roll_mean']`: Rolling mean parameter: [windows factor]. Normally [20].
+
+## How to run
+
+To run the project, follow these steps:
+
+1. Clone or download this repository to your local machine.
+2. Install the required packages listed in the requirements.txt file.
+3. Open the main.py file and edit the variables and settings as needed.
+4. Run the main.py file and wait for the results.
+
+## License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
