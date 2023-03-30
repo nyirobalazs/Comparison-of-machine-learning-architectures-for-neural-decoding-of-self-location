@@ -162,11 +162,6 @@ class Preprocess():
         """
         Simple smoothing by convolving a filter with 1/N.
         ----------
-        DeepInsight Toolbox
-        © Markus Frey
-        https://github.com/CYHSM/DeepInsight
-        Licensed under MIT License
-        ----------
         Args:
             signal (array_like): Signal to be smoothed
             N (int): smoothing_factor
@@ -186,11 +181,6 @@ class Preprocess():
     def calculate_speed_from_position(self, positions, interval, smoothing=False):
         """
         Calculate speed from X,Y coordinates.
-        ----------
-        DeepInsight Toolbox
-        © Markus Frey
-        https://github.com/CYHSM/DeepInsight
-        Licensed under MIT License
         ----------
         Args:
             positions ((N, 2) array_like): N samples of observations, containing X and Y coordinates
@@ -216,11 +206,6 @@ class Preprocess():
         """
         Calculates head direction based on X and Y coordinates with two LEDs.
         ----------
-        DeepInsight Toolbox
-        © Markus Frey
-        https://github.com/CYHSM/DeepInsight
-        Licensed under MIT License
-        ----------
         Args:
             positions ((N, 2) array_like): N samples of observations, containing X and Y coordinates
             return_as_deg (bool): Return heading in radians or degree
@@ -245,9 +230,6 @@ class Preprocess():
     def resize_extracted(signal_batch, new_width, new_height):
         """
         It resize the wavelet transformed windows into a smaller size to save memory.
-        ----------
-        Source:
-        https://stackoverflow.com/questions/55275466/numpy-resize-3d-array-with-interpolation-in-2d
         ----------
         Args:
             signal_batch (3d array): preprocessed 
@@ -292,11 +274,6 @@ class Preprocess():
         """
         1. Downscale and interpolate the LED postions to 1 coordinate per window
         2. Calculate the head direction, speed, and position of the animal
-        ----------
-        DeepInsight Toolbox
-        © Markus Frey
-        https://github.com/CYHSM/DeepInsight
-        Licensed under MIT License
         ----------
         Args:
             dataset (obj): Dataset of the raw signal.
