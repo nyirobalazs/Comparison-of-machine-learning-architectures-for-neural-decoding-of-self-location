@@ -67,7 +67,7 @@ The following variables and settings are used in the project:
 | <ul><li> 'narrow_filt' | Notch filter parameters: [notch frequency, quality factor] | Normally [50,20] or any valid filter parameters within the range of the signal frequency spectrum. The notch frequency must be a positive float. The quality factor must be a positive float greater than zero.  | List of floats |
 | <ul><li> 'down_samp' | Downsample parameter: [new sampling rate] | [new_srate] or any valid sampling rate lower than the original sampling rate. The new sampling rate must be a positive integer.  | List of integer |
 | <ul><li> 'detrend' | Detrend parameter: True or False. If it is True, a linear detrending will be applied to the signal.  | True or False  | Boolean |
-| <ul><li> 'roll_mean' | Rolling mean parameter: [windows factor]. If it is a positive integer greater than zero, a rolling mean with a window size of windows factor times the window size will be applied to the signal. If it is zero, no rolling mean will be applied.  Normally [20].  Any positive integer or zero.  Integer |
+| <ul><li> 'roll_mean' | Rolling mean parameter: [windows factor]. If it is a positive integer greater than zero, a rolling mean with a window size of windows factor times the window size will be applied to the signal. If it is zero, no rolling mean will be applied. | Normally [20].  Any positive integer or zero. | Integer |
 
 
 ## License
