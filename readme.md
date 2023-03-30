@@ -62,11 +62,12 @@ The following variables and settings are used in the project:
 | image_save_dir | The name of the target folder where the plots will be saved | Any valid folder path | String |
 | start_point | It gives the start point of the plotted signal parts in ms | Any positive integer | Integer |
 | end_point | It gives the end point of the plotted signal parts in ms | Any positive integer greater than start_point | Integer |
-| tasks['Cheby_band'] | Chebyshev bandpass filter parameters: [lowcut, highcut, order] | Normally [2,250,5] or any valid filter parameters within the range of the signal frequency spectrum. The order must be a positive integer. The lowcut and highcut must be positive floats. The lowcut must be lower than the highcut.  | List of floats and integer |
-| tasks['narrow_filt'] | Notch filter parameters: [notch frequency, quality factor] | Normally [50,20] or any valid filter parameters within the range of the signal frequency spectrum. The notch frequency must be a positive float. The quality factor must be a positive float greater than zero.  | List of floats |
-| tasks['down_samp'] | Downsample parameter: [new sampling rate] | [new_srate] or any valid sampling rate lower than the original sampling rate. The new sampling rate must be a positive integer.  | List of integer |
-| tasks['detrend'] | Detrend parameter: True or False. If it is True, a linear detrending will be applied to the signal.  | True or False  | Boolean |
-| tasks['roll_mean'] | Rolling mean parameter: [windows factor]. If it is a positive integer greater than zero, a rolling mean with a window size of windows factor times the window size will be applied to the signal. If it is zero, no rolling mean will be applied.  Normally [20].  Any positive integer or zero.  Integer |
+| tasks |  A dictionary containing the required preprocessing steps and their settings. The possible keys are 'Cheby_band', 'narrow_filt', 'down_samp', 'detrend', 'roll_mean', 'normalize', and 'feature_extract'. | If you want to switch off a preprocessing step, write False to the parameters section. See default settings below. | False or a list |
+| * 'Cheby_band' | Chebyshev bandpass filter parameters: [lowcut, highcut, order] | Normally [2,250,5] or any valid filter parameters within the range of the signal frequency spectrum. The order must be a positive integer. The lowcut and highcut must be positive floats. The lowcut must be lower than the highcut.  | List of floats and integer |
+| * 'narrow_filt' | Notch filter parameters: [notch frequency, quality factor] | Normally [50,20] or any valid filter parameters within the range of the signal frequency spectrum. The notch frequency must be a positive float. The quality factor must be a positive float greater than zero.  | List of floats |
+| * 'down_samp' | Downsample parameter: [new sampling rate] | [new_srate] or any valid sampling rate lower than the original sampling rate. The new sampling rate must be a positive integer.  | List of integer |
+| * 'detrend' | Detrend parameter: True or False. If it is True, a linear detrending will be applied to the signal.  | True or False  | Boolean |
+| * 'roll_mean' | Rolling mean parameter: [windows factor]. If it is a positive integer greater than zero, a rolling mean with a window size of windows factor times the window size will be applied to the signal. If it is zero, no rolling mean will be applied.  Normally [20].  Any positive integer or zero.  Integer |
 
 
 ## License
