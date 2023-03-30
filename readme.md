@@ -69,6 +69,18 @@ The following variables and settings are used in the project:
 | <ul><li> 'detrend' | Detrend parameter: True or False. If it is True, a linear detrending will be applied to the signal.  | True or False  | Boolean |
 | <ul><li> 'roll_mean' | Rolling mean parameter: [windows factor]. If it is a positive integer greater than zero, a rolling mean with a window size of windows factor times the window size will be applied to the signal. If it is zero, no rolling mean will be applied. | Normally [20].  Any positive integer or zero. | Integer |
 
+## Future Improvements
+
+I'm constantly working to improve this project and make it even better! Here are some areas I'm planning to focus on in the near future:
+
+- **More visualisation features**: We're exploring ways to add additional plotting features to make this project even more useful and powerful. 
+- **Better documentation**: I working on a more detailed documentation with more example projects and description to use all the features.
+- **Bug fixes and performance improvements**: No software is perfect, and I'm always on the lookout for ways to improve the performance and stability of this project. 
+- **Creating a Python package**: I am currently working on turning the project into an installable python package, including the body functions. 
+- **Fit to principles**: Along with the previous point, the next update will rewrite the code to better fit the Interface Segregation and the Dependency Inversion Principles.
+
+I'm always looking for ways to make our project better, and I welcome your feedback and suggestions.
+
 
 ## License
 
