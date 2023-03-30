@@ -3,8 +3,6 @@ import numpy as np
 import plotly.graph_objects as go
 from plotly.subplots import make_subplots
 import plotly.express as px
-# from ssqueezepy import ssq_cwt
-
 import read_write
 print(read_write.print_terminal(type='done',message='Python package initialization done in visualization.'))   
 
@@ -23,7 +21,6 @@ def find_nearest(timevector, timepoint):
     idx = (np.abs(timevector - timepoint)).argmin()  #find closest distance
 
     return idx
-
 
 def plot_raw_tetrode(timestamps,
                     tetrode_data, 
@@ -57,9 +54,7 @@ def plot_raw_tetrode(timestamps,
         # Plot settings
         fig.update_traces(showlegend=False)
         fig.update_xaxes(showgrid=False) # Don't show the grids
-        #fig.update_yaxes(showgrid=False)
         fig.update_yaxes(showticklabels=False) # Don't show stickers
-        #fig.update_layout(xaxis=dict(rangeslider=dict(visible=True),)) # slider under 1st plot
         fig.update_layout(height=500, 
                         width=700,
                         title=title,
@@ -146,7 +141,6 @@ def plot_raw_data(timestamps,
     fig.update_annotations(y=1.13, selector={'text':titles[2]})
     fig.update_layout(xaxis=dict(rangeslider=dict(visible=True),)) # slider under 1st plot
     fig.update_layout(polar = dict(radialaxis_range = [-1*max(speed[:,0]), max(speed[:,0])])) #range of the speed array on 2nd plot
-
     fig.show()
 
     if is_save:
@@ -180,7 +174,7 @@ def plot_cwt(time, coefficients, frequencies, is_save = False, save_path = './im
     ax.invert_yaxis()
     ylim = ax.get_ylim()
     ax.set_ylim(ylim[0], -1)
-
+    
     cbar_ax = fig.add_axes([0.95, 0.5, 0.03, 0.25])
     fig.colorbar(im, cax=cbar_ax, orientation="vertical")
     plt.show()
@@ -237,7 +231,6 @@ def processed_plot(timestamps,
         fig.add_trace(go.Scatter(x=time_raw, y=proc),row=2, col=1)
 
         # Plot the head directions and the speed on a polar coordinate
-        
         fig.update_xaxes(showgrid=False) # Don't show the grids
         fig.update_yaxes(showgrid=False) # Don't show the grids
         fig.update_xaxes(showticklabels=False,row=1, col=1) 
@@ -248,7 +241,6 @@ def processed_plot(timestamps,
         fig.update_traces(showlegend=False)
         fig.update_layout(height=500, width=1400, title_text="Tetrode data before and after pre-processing")
         fig.update_coloraxes(showscale=False)
-        
         fig.show()
         
         if is_save:
@@ -280,7 +272,6 @@ def plot_speed_and_head(df,
     
     fig.add_trace(px.histogram(df, x="speed", nbins=20),row=1, col=1)
     fig.add_trace(px.histogram(df, x="head_dir", nbins=20),row=2, col=1)
-    
     fig.show()
        
     if is_save:
@@ -301,7 +292,6 @@ def plot_cumulative_distribution(bins_count, cumulative, pdf, save_path='./image
         pdf (array): pdf values.
         is_save (bool, optional): If you want to save the plot set it True. Defaults to False.
     """
-    
     
     fig = go.Figure()
     fig.add_trace(go.Scatter(x=bins_count[1:], y=pdf,
