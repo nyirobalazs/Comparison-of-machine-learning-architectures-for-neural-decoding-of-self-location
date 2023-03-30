@@ -75,8 +75,7 @@ class Data:
                 'bad_channels': self.bad_channels            
                 }
         return info
-        
-        
+
 
 class DataFile:
     """
@@ -180,23 +179,17 @@ class DataFile:
             """
             Create or update dataset in HDF5 file.
             ----------
-            DeepInsight Toolbox
-            © Markus Frey
-            https://github.com/CYHSM/DeepInsight
-            Licensed under MIT License
-            
-            Parameters
-            ----------
-            hdf5_file : File
-                File identifier
-            dataset_name : str
-                Name of new dataset
-            dataset_shape : array_like
-                Shape of new dataset
-            dataset_type : type
-                Type of dataset (np.float16, np.float32, 'S', etc...)
-            dataset_value : array_like
-                Data to store in HDF5 file
+            Parameters:
+                hdf5_file : File
+                    File identifier
+                dataset_name : str
+                    Name of new dataset
+                dataset_shape : array_like
+                    Shape of new dataset
+                dataset_type : type
+                    Type of dataset (np.float16, np.float32, 'S', etc...)
+                dataset_value : array_like
+                    Data to store in HDF5 file
             """
             max_shape_tuple = tuple([None]*len(dataset_shape))
             if not dataset_name in hdf5_file:
@@ -427,7 +420,6 @@ def save_model(path='./models/model.h5', model=None):
     with open(path+'.json', 'w') as outfile:
         json.dump(model.to_json(), outfile)
     
-
     
 @DataFile.path_check('w',required_format=['.jpg','.jpeg','.svg','.png']) 
 def save_plot(path='./',fig=None):
@@ -511,8 +503,6 @@ def save_variables(path='./',
         print(print_terminal(type='done',message='Variables and settings sucessfuly saved.'))
     else:
         print(print_terminal(type='run',message='Variables and settings were not saved due to is_save=False.'))
-    
-    
     
 
 @DataFile.path_check('r',required_format=['.nwb','.h5'])
