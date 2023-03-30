@@ -53,11 +53,11 @@ The following variables and settings are used in the project:
 | is_test | If it's True no output data will be saved and make a minimum runtime to check functions | True or False | Boolean |
 | is_save | If it's True all results will be saved (eg.: plots, models, etc.) | True or False | Boolean |
 | source_file_path | Gives the source path (base_path + 'source file name') | Any valid file path | String |
-| original_srate | Sampling rate of the raw signal in Hz | 30000 | Integer |
-| led_srate | Sampling rate of the raw LED signal in Hz | 1000 | Integer |
-| new_srate | Downscaled target sampling rate in Hz | 10000 | Integer |
-| window_size | Size of one window in milliseconds | 2000 | Integer |
-| chunk_size | Size of one chunk in milliseconds | 30000 | Integer |
+| original_srate | Sampling rate of the raw signal in Hz | 30000 (based on your signal) | Integer |
+| led_srate | Sampling rate of the raw LED signal in Hz | 1000 (based on your signal) | Integer |
+| new_srate | Downscaled target sampling rate in Hz | 10000 (based on your signal) | Integer |
+| window_size | Size of one window in milliseconds | 2000 (based on your signal) | Integer |
+| chunk_size | Size of one chunk in milliseconds | 30000 (based on your signal) | Integer |
 | is_save_images | If it is True the plots will be saved | True or False | Boolean |
 | image_save_dir | The name of the target folder where the plots will be saved | Any valid folder path | String |
 | start_point | It gives the start point of the plotted signal parts in ms | Any positive integer | Integer |
